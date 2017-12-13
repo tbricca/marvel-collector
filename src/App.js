@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-const data = 
+const comic = 
 {
   "code": 200,
   "status": "Ok",
@@ -173,9 +173,11 @@ const data =
 
 class App extends Component {
   render() {
+    const {thumbnail} = comic.data.results[0]
     return (
       <div className="App">
-      <p>{data.data.results[0].title}</p>
+      <h1>{comic.data.results[0].title}</h1> 
+      <img src= {`${thumbnail.path}.${comic.data.results[0].thumbnail.extension}`} />
       </div>
     );
   }
