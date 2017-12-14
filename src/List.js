@@ -6,6 +6,8 @@ class List extends Component {
             <div>
 
             </div>
-        ),
+        );
     }
 }
+
+export default App;

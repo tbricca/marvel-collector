@@ -2,17 +2,19 @@ import React, { Component } from 'react';
 // import './App.css';
 
 
-class App extends Component {
+class ListItem extends Component {
   render() {
       // lookup exactly how to properly use metadata
-      const metaData =this.props.comic;
-    const {thumbnail} = comic.data.results[0] 
+    const metaData =comic.data.results[0];
+    const {thumbnail, issueNumber, pageCount, dates, prices} = metaData;
+
     return (
       <div className="App">
-      <h1>{comic.data.results[0].title}</h1> 
-      <h1>Issue</h1>
-      <h1>Date</h1>
-      <h1>Price</h1>
+      <h1>[metadata.title]</h1>
+     {/*  <h1>{comic.data.results[0].title}</h1>  */}
+      <h1>Issue: [issuenumber]</h1>
+      <h1>Page: [pageCount]</h1>
+      <h1>Price: $[prices[0].price]</h1>
       <img className="comic-thumbnail" src= {`${thumbnail.path}.${comic.data.results[0].thumbnail.extension}`} />
       </div>
     );
