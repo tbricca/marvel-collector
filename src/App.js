@@ -177,7 +177,7 @@ class App extends Component {
     return (
       <div className="App">
       <h1>{comic.data.results[0].title}</h1> 
-      <img src= {`${thumbnail.path}.${comic.data.results[0].thumbnail.extension}`} />
+      <img className="comic-thumbnail" src= {`${thumbnail.path}.${comic.data.results[0].thumbnail.extension}`} />
       </div>
     );
   }
