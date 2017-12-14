@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
+import ListItem from './ListItem';
 
 class List extends Component {
     render() {
         return (
-            <div>
+            <ListItem comic={this.props.result[0]}/>
 
-            </div>
+            
         );
     }
 }
 
-export default App;
+export default List;

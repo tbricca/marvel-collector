@@ -173,14 +173,21 @@ const comic =
 
 class App extends Component {
   render() {
-    const {thumbnail} = comic.data.results[0]
-    return (
-      <div className="App">
-      <h1>{comic.data.results[0].title}</h1> 
-      <img className="comic-thumbnail" src= {`${thumbnail.path}.${comic.data.results[0].thumbnail.extension}`} />
-      </div>
-    );
-  }
+    // lookup exactly how to properly use metadata
+  const metaData =comic.data.results[0];
+  const {thumbnail, issueNumber, pageCount, dates, prices} = metaData;
+
+  return (
+    <div className="App">
+    <h1>[metadata.title]</h1>
+    <h1>{comic.data.results[0].title}</h1> 
+    <h1>Issue: [issuenumber]</h1>
+    <h1>Page: [pageCount]</h1>
+    <h1>Price: $[prices[0].price]</h1>
+    <img className="comic-thumbnail" src= {`${thumbnail.path}.${comic.data.results[0].thumbnail.extension}`} />
+    </div>
+  );
+}
 }
 
 export default App;
